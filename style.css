@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    transition: background 1s ease, color 0.3s ease;
+    background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* AUTO CONTRAST COLORS */
+.light-text * {
+    color: #ffffff !important;
+}
+
+.dark-text * {
+    color: #1a1a1a !important;
+}
+
+/* APP BOX */
+.app {
+    width: 95%;
+    max-width: 540px;
+    padding: 25px;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* SEARCH BAR */
+.search-box {
+    display: flex;
+    gap: 12px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 1.1rem;
+}
+
+.search-box button {
+    padding: 12px 18px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+/* CURRENT WEATHER */
+.current-weather {
+    margin-top: 20px;
+    padding: 25px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.22);
+    text-align: center;
+}
+
+.current-weather .temp {
+    font-size: 4rem;
+    font-weight: 600;
+}
+
+.current-weather .meta {
+    margin-top: 8px;
+    font-size: 1.1rem;
+}
+
+/* FORECAST HEADINGS */
+.forecast-title {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+/* 5-DAY FORECAST GRID */
+.forecast {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.forecast-card {
+    background: rgba(255, 255, 255, 0.20);
+    padding: 12px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.forecast-card img {
+    width: 55px;
+}
+
+/* HOURLY FORECAST */
+.hourly {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding: 10px 0;
+}
+
+.hourly::-webkit-scrollbar {
+    height: 8px;
+}
+
+.hourly::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+}
+
+.hour-card {
+    min-width: 120px;
+    background: rgba(255, 255, 255, 0.22);
+    padding: 12px;
+    border-radius: 12px;
+    text-align: center;
+}
+.hour-card img {
+    width: 45px;
+}

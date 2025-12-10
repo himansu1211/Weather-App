@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body id="app-body" class="light-text">
+
+    <div class="app">
+
+        <h2 class="title">Weather App</h2>
+
+        <div class="search-box">
+            <input type="text" id="input-box" placeholder="Search city..." />
+            <button id="search-btn" aria-label="Search">
+                <i class="fa fa-search"></i>
+            </button>
+        </div>
+
+        <div id="current-weather" class="current-weather"></div>
+
+        <h3 class="forecast-title">Hourly Forecast</h3>
+        <div id="hourly" class="hourly"></div>
+
+        <h3 class="forecast-title">5-Day Forecast</h3>
+        <div id="forecast" class="forecast"></div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
