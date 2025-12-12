@@ -1,39 +1,160 @@
-# Weather App 🌦️
+# 🌦️ WeatherSphere --- Advanced Global Weather Application
 
-A modern, responsive weather application built with HTML, CSS, and JavaScript.  
-It supports **automatic location weather**, manual city search, **hourly forecast**,  
-**5-day forecast**, and **dynamic multicolour animated backgrounds** that match the  
-weather conditions in real time.
+WeatherSphere is a modern, high-performance weather dashboard built
+using **HTML**, **CSS**, and **JavaScript**, powered by **Open-Meteo**,
+**OpenAQ**, **Leaflet Maps**, and internal SVG icons (no external assets
+required).
 
-## 🔥 Features
-- Automatic weather using GPS  
-- Search weather by city  
-- Live temperature, humidity, wind speed  
-- 12-hour hourly forecast  
-- 5-day daily forecast  
-- Animated multicolour background based on weather  
-- Clean UI with glass-effect cards  
-- Fully responsive (mobile + desktop)
+It provides real-time weather, 24-hour forecasts, 5-day forecasts, AQI
+analytics, UV index, wind analysis, mini-map navigation, automatic
+geolocation, and animated weather overlays --- all inside a smooth,
+responsive UI.
 
-## 🌐 API Used
-- OpenWeatherMap Current Weather API  
-- OpenWeatherMap 5-Day Forecast API  
+------------------------------------------------------------------------
 
-## 🚀 How to Run
-Just open the `index.html` file in any browser.  
-No backend needed.
+## 🚀 Features
+
+### ✔ Live Weather
+
+-   Real-time temperature, wind speed, conditions\
+-   Weather-coded dynamic icons\
+-   Automatic location detection (GPS)
+
+### ✔ Forecasts
+
+-   **24-hour hourly forecast**
+-   **5-day daily forecast**
+-   Dynamic SVG icons for all conditions
+
+### ✔ Maps & Locality Tools
+
+-   Global **interactive weather map** (Leaflet.js)
+-   Click anywhere on the map → get exact weather for that location
+-   Built-in **mini-map** for multi-scale navigation
+
+### ✔ Analytics Dashboard
+
+Powered by Chart.js: - AQI (PM2.5) bar chart (nearest measuring
+stations) - UV index graph (24h) - Humidity graph (24h) - Wind rose
+chart (directional wind distribution)
+
+### ✔ Smooth UI / UX
+
+-   Animated rain, snow, storm overlays\
+-   Fully responsive (mobile, tablet, desktop)\
+-   Clean glass-morphism card design\
+-   Fast auto-suggest search with live geocoding\
+-   All icons stored using **inline SVG sprite** (no external folder)
+
+------------------------------------------------------------------------
+
+## 🛠️ Tech Stack
+
+-   **JavaScript (ES6)**
+-   **Open-Meteo API** (Weather & Forecast)
+-   **OpenAQ API** (Air Quality)
+-   **OpenStreetMap + Leaflet.js** (Map)
+-   **Chart.js** (Graphs & analytics)
+-   **Inline SVG Icons** (No external assets)
+-   **HTML5 + CSS3** (UI & Layout)
+
+------------------------------------------------------------------------
 
 ## 📁 Project Structure
-- `index.html` — main interface  
-- `style.css` — UI and animations  
-- `script.js` — weather logic, API calls, auto-location  
 
-## 📝 Future Improvements (optional)
-- UV Index  
-- AQI  
-- Weather animations (rain, snow, fog)  
-- Saved favorite cities  
-- Dark/Light mode  
+    /
+    ├── index.html        # Main App
+    ├── style.css         # UI + Animations
+    ├── script.js         # App Logic + API + Maps + Charts
+    └── README.md         # Project Documentation
 
-## 👨‍💻 Author
-Himansu – Weather App Project
+------------------------------------------------------------------------
+
+## 🔧 Installation & Setup
+
+You don't need Node.js or any backend.\
+Just:
+
+1.  Download the project or clone the repository.
+2.  Open **index.html** in any browser.
+
+That's it.\
+Everything runs directly in the browser.
+
+------------------------------------------------------------------------
+
+## 🌍 API Services Used
+
+### **Open-Meteo Weather API**
+
+-   Current weather\
+-   Hourly forecast\
+-   Daily forecast\
+-   UV index
+
+### **OpenAQ -- Air Quality API**
+
+-   PM2.5\
+-   Nearest measuring stations
+
+### **Nominatim Geocoding**
+
+-   Location search\
+-   Reverse geocoding for map clicks
+
+### **OpenStreetMap Tiles**
+
+-   Base map layer
+
+------------------------------------------------------------------------
+
+## 🧩 Key Components
+
+### 🔹 Inline SVG Icon System
+
+All icons (sun, rain, cloud, snow, etc.) are embedded directly in the
+HTML.\
+No external icon packs, no PNGs, no folders.
+
+### 🔹 Animated Weather Overlays
+
+-   Rain\
+-   Snow\
+-   Storm\
+    (Triggered automatically based on weather code.)
+
+### 🔹 Auto-Location
+
+If enabled, the app instantly loads weather for the user's real
+location.
+
+### 🔹 Fully Dynamic Dashboard
+
+Charts update instantly whenever you pick a new place.
+
+------------------------------------------------------------------------
+
+## 🤝 Author
+
+**Himansu Kumar Sahu**\
+WeatherSphere --- 2025\
+Made with passion for clean UI and accurate meteorological data.
+
+------------------------------------------------------------------------
+
+## 📜 License
+
+This project is free to use and modify. Attribution appreciated but not
+required.
+
+------------------------------------------------------------------------
+
+## ⭐ Contribution
+
+If you'd like features such as: - Dark/Light Mode\
+- More weather animations\
+- Global radar layers (rain, wind, satellite)\
+- PWA offline mode\
+- Premium UI redesign
+
+Feel free to request or contribute!
