@@ -1,0 +1,202 @@
+@import "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* WeatherSphere Design System - Glassmorphic Weather Dashboard */
+
+@layer base {
+  :root {
+    /* Core Weather Palette */
+    --background: 210 40% 96%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Primary - Sky Blue */
+    --primary: 199 89% 48%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Soft Cloud */
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    /* Accent - Warm Sun */
+    --accent: 38 92% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 199 89% 48%;
+    --radius: 1rem;
+
+    /* Weather Theme Colors */
+    --weather-clear: 199 89% 48%;
+    --weather-clouds: 213 20% 63%;
+    --weather-rain: 214 41% 42%;
+    --weather-storm: 234 30% 24%;
+    --weather-snow: 210 33% 82%;
+    --weather-mist: 210 14% 65%;
+
+    /* Glassmorphism */
+    --glass-bg: 0 0% 100% / 0.25;
+    --glass-border: 0 0% 100% / 0.3;
+    --glass-blur: 20px;
+
+    /* Dynamic Gradients */
+    --gradient-clear: linear-gradient(135deg, hsl(199 89% 65%), hsl(38 92% 60%));
+    --gradient-clouds: linear-gradient(135deg, hsl(213 35% 65%), hsl(210 20% 75%));
+    --gradient-rain: linear-gradient(135deg, hsl(214 41% 42%), hsl(213 35% 55%));
+    --gradient-storm: linear-gradient(135deg, hsl(234 30% 24%), hsl(260 35% 35%));
+    --gradient-snow: linear-gradient(135deg, hsl(210 33% 82%), hsl(200 20% 90%));
+    --gradient-night: linear-gradient(135deg, hsl(234 40% 16%), hsl(260 45% 25%));
+
+    /* Shadows */
+    --shadow-glass: 0 8px 32px hsl(210 40% 20% / 0.12);
+    --shadow-elevated: 0 16px 48px hsl(210 40% 20% / 0.18);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 199 89% 48%;
+  }
+
+  .dark {
+    --background: 222 47% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 199 89% 55%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 38 92% 55%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 199 89% 55%;
+
+    --glass-bg: 0 0% 0% / 0.3;
+    --glass-border: 0 0% 100% / 0.1;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 199 89% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 199 89% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply relative overflow-hidden rounded-2xl;
+    background: hsl(var(--glass-bg));
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid hsl(var(--glass-border));
+    box-shadow: var(--shadow-glass);
+  }
+
+  .glass-card-solid {
+    @apply relative overflow-hidden rounded-2xl bg-card/80;
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid hsl(var(--glass-border));
+    box-shadow: var(--shadow-glass);
+  }
+
+  .weather-gradient-clear {
+    background: var(--gradient-clear);
+  }
+
+  .weather-gradient-clouds {
+    background: var(--gradient-clouds);
+  }
+
+  .weather-gradient-rain {
+    background: var(--gradient-rain);
+  }
+
+  .weather-gradient-storm {
+    background: var(--gradient-storm);
+  }
+
+  .weather-gradient-snow {
+    background: var(--gradient-snow);
+  }
+
+  .weather-gradient-night {
+    background: var(--gradient-night);
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 10px hsl(0 0% 0% / 0.2);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}

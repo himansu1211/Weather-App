@@ -1,80 +1,19 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>WeatherSphere</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- TODO: Set the document title to the name of your application -->
+    <title>WeatherSphere</title>
+    <!-- TODO: Update og:title to match your application name -->
+    <meta property="og:title" content="WeatherSphere" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta property="og:description" content="A glassmorphic weather dashboard built with React, TypeScript, Tailwind CSS, and Sonner." />
+  </head>
 
-  <link rel="stylesheet" href="style.css" />
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-  />
-</head>
-
-<body>
-
-  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
-    <symbol id="sun" viewBox="0 0 24 24">
-      <circle cx="12" cy="12" r="5" fill="currentColor" />
-    </symbol>
-    <symbol id="cloud" viewBox="0 0 24 24">
-      <path d="M7 18h10a4 4 0 000-8 6 6 0 10-11.7 2A4 4 0 007 18z" fill="currentColor"/>
-    </symbol>
-    <symbol id="rain" viewBox="0 0 24 24">
-      <path d="M7 16h10a4 4 0 000-8 6 6 0 10-11.7 2A4 4 0 007 16z" fill="currentColor"/>
-    </symbol>
-  </svg>
-
-  <div class="app">
-    <header class="card top">
-      <div class="brand">WeatherSphere</div>
-
-      <div class="search-wrap">
-        <input id="searchInput" placeholder="Search location…" />
-        <button id="searchBtn">Search</button>
-        <button id="locationBtn">📍</button>
-      </div>
-    </header>
-
-    <main class="grid">
-      <aside>
-        <div class="card current">
-          <div id="currentTop"></div>
-        </div>
-
-        <div class="card">
-          <h4>Sun & UV</h4>
-          <div id="sunmoon"></div>
-        </div>
-
-        <div class="card">
-          <h4>Updates</h4>
-          <div id="updates"></div>
-        </div>
-      </aside>
-
-      <section>
-        <div class="card map-wrap">
-          <div id="map"></div>
-        </div>
-
-        <div class="card">
-          <h4>Hourly</h4>
-          <div id="hourly" class="hourly"></div>
-        </div>
-
-        <div class="card">
-          <h4>5-Day Forecast</h4>
-          <div id="daily" class="daily-grid"></div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="card footer">Made by Himansu</footer>
-  </div>
-
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="script.js"></script>
-</body>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
